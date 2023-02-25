@@ -1,0 +1,15 @@
+.scheduleDays {
+  @apply flex items-center justify-between gap-x-0 gap-y-20 flex-wrap text-white;
+}
+.day {
+  @apply basis-[425px] bg-blue-400 p-5 rounded-[30px] min-h-[210px] text-center relative;
+}
+// .dayLink{
+//   @apply absolute top-0 bottom-0 left-0 right-0;
+// }
+.dayTitle {
+  @apply text-[36px] font-bold mb-[33px] mt-5;
+}
+.dayMuscleGroup{
+  @apply text-[30px] bg-transparent text-center focus:outline-none focus:border-b-2 border-solid border-white
+}

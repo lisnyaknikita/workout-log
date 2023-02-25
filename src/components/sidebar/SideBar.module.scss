@@ -1,0 +1,12 @@
+.sideBar {
+  @apply basis-[120px] bg-slate-700 flex flex-col items-center justify-start;
+}
+.sideBarBtn {
+  @apply px-[35px] py-[28px] flex items-center justify-center;
+  svg {
+    @apply w-[45px] h-[45px];
+    path {
+      stroke: #fff;
+    }
+  }
+}

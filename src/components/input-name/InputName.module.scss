@@ -1,0 +1,6 @@
+.greeting {
+  @apply flex gap-1 justify-center text-[65px] text-white mb-[100px];
+}
+.input {
+  @apply bg-transparent max-w-[350px] focus:outline-none focus:border-b border-solid border-white;
+}

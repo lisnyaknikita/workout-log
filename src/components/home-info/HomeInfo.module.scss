@@ -1,0 +1,15 @@
+.homeInfo {
+  @apply flex gap-[32px] text-white bg-blue-900 rounded-[30px];
+}
+.homeInfoContent{
+    @apply py-[50px] pr-[32px]
+}
+.homeInfoTitle {
+  @apply text-[40px] leading-snug mb-[111px];
+  span {
+    @apply font-bold;
+  }
+}
+.homeInfoBtn {
+    @apply p-5 bg-violet-600 rounded-xl
+}

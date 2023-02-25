@@ -1,0 +1,38 @@
+.training {
+  @apply text-white flex flex-col items-center;
+}
+.trainingTitle {
+  @apply text-[75px] text-center mb-[135px];
+}
+.tableWrapper {
+  @apply h-[500px] overflow-y-auto mb-5 bg-blue-800 rounded-[30px];
+}
+.table {
+  // bg-blue-800 rounded-[30px] 
+  @apply h-[500px] w-[1560px];
+  tr {
+    @apply border-b-2 border-solid border-black h-20 w-[1560px] flex  text-left px-5 leading-[4.5];
+  }
+  td {
+    @apply text-[17px];
+  }
+}
+.thExercise {
+  @apply basis-[1000px];
+}
+.thReps,
+.thSets {
+  @apply basis-[280px] border-l-2 border-solid border-black text-center;
+}
+.thSets{
+  @apply border-r-2 border-solid border-black
+}
+.addBtn {
+  @apply px-4 py-2 rounded-3xl bg-blue-700 flex gap-3 items-center;
+}
+.deleteBtn{
+  @apply p-3 bg-transparent transition-colors hover:bg-red-500 rounded-3xl ml-4 mt-4;
+  svg{
+    @apply w-5 h-5
+  }
+}
