@@ -1,0 +1,47 @@
+.table {
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  @apply h-[480px];
+  tr {
+    //last:border-b-0
+    @apply border-b-2 border-solid border-blue-900 h-20 w-[1600px] flex text-left px-5 leading-[3.5];
+    @media (max-width: 1830px) {
+      @apply w-[1200px];
+    }
+    @media (max-width: 1430px) {
+      @apply w-[900px];
+    }
+    @media (max-width: 1050px) {
+      @apply w-[700px];
+    }
+    @media (max-width: 830px) {
+      @apply w-[600px];
+    }
+  }
+  td {
+    @apply text-[22px];
+    > input {
+      @apply w-7 focus:w-10 transition-all text-violet-100;
+    }
+    @media (max-width: 830px) {
+      @apply text-lg leading-[4.2];
+    }
+  }
+}
+.thExercise {
+  @apply basis-[1000px];
+}
+.thReps,
+.thSets {
+  @apply basis-[280px] border-l-2 border-solid border-blue-900 text-center;
+}
+.thSets {
+  @apply border-r-2 border-solid border-blue-900;
+}
+.deleteBtn {
+  @apply p-3 bg-transparent transition-colors hover:bg-red-500 rounded-3xl ml-4 mt-4;
+  svg {
+    @apply w-5 h-5;
+  }
+}

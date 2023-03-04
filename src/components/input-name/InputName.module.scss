@@ -1,6 +1,21 @@
 .greeting {
   @apply flex gap-1 justify-center text-[65px] text-white mb-[100px];
+  @media (max-width: 1430px) {
+    @apply ml-[10%];
+  }
+  @media (max-width: 1330px) {
+    @apply ml-[15%];
+  }
+  @media (max-width: 1230px) {
+    @apply mb-10;
+  }
+  @media (max-width: 1230px) {
+    @apply -ml-[5%] w-[600px];
+  }
 }
 .input {
-  @apply bg-transparent max-w-[350px] focus:outline-none focus:border-b border-solid border-white;
+  @apply bg-transparent max-w-[350px] border-b-2 border-transparent focus:outline-none hover:text-gray-300 transition-colors;
+  @media (max-width: 1230px) {
+    @apply max-w-[300px];
+  }
 }

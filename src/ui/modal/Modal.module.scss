@@ -1,6 +1,6 @@
-.modal{
-    @apply absolute top-0 bottom-0 left-0 right-0 bg-black/80
+.modal {
+  @apply absolute top-0 bottom-0 left-0 right-0 bg-black/80 w-screen h-screen;
 }
-.modalBody{
-    @apply fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-800 w-[700px] h-[180px] rounded-[30px] p-5
+.modalBody {
+  @apply fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-800 w-[700px] h-[180px] rounded-[30px] p-5;
 }

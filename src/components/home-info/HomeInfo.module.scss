@@ -1,15 +1,36 @@
 .homeInfo {
   @apply flex gap-[32px] text-white bg-blue-900 rounded-[30px];
+  @media (max-width: 1230px) {
+    @apply flex-col bg-transparent gap-5 items-center;
+    img {
+      @apply w-[400px];
+    }
+    // @media (max-width: 768px) {
+    //   @apply max-w-[600px] mr-0;
+    // }
+  }
 }
-.homeInfoContent{
-    @apply py-[50px] pr-[32px]
+.homeInfoContent {
+  @apply py-[50px] pr-[32px];
+  @media (max-width: 1230px) {
+    @apply py-2 pr-0 px-2;
+  }
 }
 .homeInfoTitle {
   @apply text-[40px] leading-snug mb-[111px];
-  span {
-    @apply font-bold;
+  a {
+    @apply font-bold text-violet-400 text-5xl hover:text-violet-600 transition-colors;
+  }
+  @media (max-width: 1230px) {
+    @apply text-3xl mb-8;
+    a {
+      @apply text-3xl;
+    }
   }
 }
 .homeInfoBtn {
-    @apply p-5 bg-violet-600 rounded-xl
+  @apply p-5 bg-violet-600 rounded-xl text-2xl hover:bg-violet-700 transition-colors;
+  @media (max-width: 1230px) {
+    @apply p-3 text-lg block mx-auto w-60;
+  }
 }

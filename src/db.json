@@ -1,0 +1,39 @@
+{
+  "trainings": [
+    {
+      "id": 0,
+      "day": "Monday",
+      "exercises": []
+    },
+    {
+      "id": 1,
+      "day": "Tuesday",
+      "exercises": []
+    },
+    {
+      "id": 2,
+      "day": "Wednesday",
+      "exercises": []
+    },
+    {
+      "id": 3,
+      "day": "Thursday",
+      "exercises": []
+    },
+    {
+      "id": 4,
+      "day": "Friday",
+      "exercises": []
+    },
+    {
+      "id": 5,
+      "day": "Saturday",
+      "exercises": []
+    },
+    {
+      "id": 6,
+      "day": "Sunday",
+      "exercises": []
+    }
+  ]
+}

@@ -1,7 +1,7 @@
-import { MutableRefObject } from "react";
+import { Dispatch, MutableRefObject, SetStateAction } from 'react';
 
 export interface INewExercise {
-  id: number
+  id: number;
   exercise: string;
   reps: number;
   sets: number;
@@ -9,8 +9,6 @@ export interface INewExercise {
 
 export interface IAddNewExercise {
   exercises: INewExercise[];
-  // setExercises: () => void;
-  setExercises: any;
-  onAddNewExercise: (newExercise: INewExercise) => void;
-  setIsModal: (status: boolean) => void;
+  setExercises: Dispatch<SetStateAction<INewExercise[]>>;
+  onAddNewExercise: (newExercise: INewExercise, day: string) => void;
 }

@@ -1,38 +1,30 @@
 .training {
   @apply text-white flex flex-col items-center;
 }
+.backBtn {
+  @apply absolute top-10 right-10;
+  img {
+    @apply w-[65px] h-[65px] rounded-3xl bg-transparent hover:bg-white/10 transition-colors;
+  }
+}
 .trainingTitle {
   @apply text-[75px] text-center mb-[135px];
 }
 .tableWrapper {
-  @apply h-[500px] overflow-y-auto mb-5 bg-blue-800 rounded-[30px];
-}
-.table {
-  // bg-blue-800 rounded-[30px] 
-  @apply h-[500px] w-[1560px];
-  tr {
-    @apply border-b-2 border-solid border-black h-20 w-[1560px] flex  text-left px-5 leading-[4.5];
+  @apply h-[478px] w-[1620px] overflow-y-auto mb-5 bg-blue-700 rounded-[30px];
+  @media (max-width: 1830px) {
+    @apply w-[1200px];
   }
-  td {
-    @apply text-[17px];
+  @media (max-width: 1430px) {
+    @apply w-[900px];
   }
-}
-.thExercise {
-  @apply basis-[1000px];
-}
-.thReps,
-.thSets {
-  @apply basis-[280px] border-l-2 border-solid border-black text-center;
-}
-.thSets{
-  @apply border-r-2 border-solid border-black
+  @media (max-width: 1050px) {
+    @apply w-[700px];
+  }
+  @media (max-width: 830px) {
+    @apply w-[600px];
+  }
 }
 .addBtn {
-  @apply px-4 py-2 rounded-3xl bg-blue-700 flex gap-3 items-center;
-}
-.deleteBtn{
-  @apply p-3 bg-transparent transition-colors hover:bg-red-500 rounded-3xl ml-4 mt-4;
-  svg{
-    @apply w-5 h-5
-  }
+  @apply px-4 py-2 rounded-3xl bg-white/10 flex gap-3 items-center hover:bg-white/20;
 }

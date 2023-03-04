@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { GrFormClose } from 'react-icons/gr';
+import { useDispatch, useSelector } from 'react-redux';
+import { setIsModal } from '../../store/slices/ModalSlice';
+import { RootState } from '../../store/store';
 
 import { IAddNewExercise } from './AddNewExercise.interface';
 
@@ -8,10 +11,10 @@ import classes from './AddNewExercise.module.scss';
 
 const AddNewExercise: React.FC<IAddNewExercise> = ({
   exercises,
-  setExercises,
   onAddNewExercise,
-  setIsModal,
 }) => {
+  const dispatch = useDispatch();
+
   const [exerciseName, setExerciseName] = useState<string>('');
   const [numberOfReps, setNumberOfReps] = useState<number>(0);
   const [numberOfSets, setNumberOfSets] = useState<number>(0);
@@ -22,12 +25,13 @@ const AddNewExercise: React.FC<IAddNewExercise> = ({
       return alert('Enter the exercise');
     }
     const newExercise = {
-      id: 3,
+      id: exercises.length + 1,
       exercise: exerciseName,
       reps: numberOfReps,
       sets: numberOfSets,
     };
-    onAddNewExercise(newExercise);
+    onAddNewExercise(newExercise, 'Monday');
+    dispatch(setIsModal(false));
   };
 
   return (
@@ -59,7 +63,10 @@ const AddNewExercise: React.FC<IAddNewExercise> = ({
         </button>
       </div>
 
-      <button className={classes.closeBtn} onClick={() => setIsModal(false)}>
+      <button
+        className={classes.closeBtn}
+        onClick={() => dispatch(setIsModal(false))}
+      >
         <GrFormClose />
       </button>
     </form>

@@ -1,118 +1,110 @@
-import clsx from 'clsx';
-import React, { useState } from 'react';
+import axios from 'axios';
+
+import React, { useEffect, useState } from 'react';
+
+import { Link } from 'react-router-dom';
+
 import { AiOutlinePlus } from 'react-icons/ai';
-import { AiOutlineDelete } from 'react-icons/ai';
 
 import Modal from '../../ui/modal/Modal';
+
 import AddNewExercise from '../add-new-exercise/AddNewExercise';
 import { INewExercise } from '../add-new-exercise/AddNewExercise.interface';
+import { IExercise, ITrainingDay } from './TrainingDay.interfaces';
+
+import { useGetDay } from '../../utils/useGetDay';
+import { useGetIdDay } from '../../utils/useGetIdDay';
+import { useGetPathId } from '../../utils/useGetPathId';
+
+import BackBtn from '../../assets/images/backBtn-icon.svg';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+import { setIsModal } from '../../store/slices/ModalSlice';
 
 import classes from './TrainingDay.module.scss';
+import {
+  setIsHomeIconActive,
+  setIsScheduleIconActive,
+} from '../../store/slices/IsActiveSlice';
+import TrainingDayTable from '../training-day-table/TrainingDayTable';
 
 const TrainingDay: React.FC = () => {
+  const dispatch = useDispatch();
+
+  const isModal = useSelector((state: RootState) => state.modal.isModal);
+
   const [exercises, setExercises] = useState([
-    { id: 1, exercise: 'Default push-ups', reps: 12, sets: 3 },
-    { id: 2, exercise: 'Archer push-ups', reps: 10, sets: 3 },
+    { id: 0, exercise: 'Default push-ups', reps: 12, sets: 3 },
   ]);
-  const [isModal, setIsModal] = useState(false);
+
+  if (window.location.pathname.includes('training')) {
+    dispatch(setIsHomeIconActive(false));
+    dispatch(setIsScheduleIconActive(true));
+  }
+
+  const day = useGetDay();
+  const exerciseThisDay: IExercise[] = useGetIdDay();
+  const pathId = useGetPathId();
 
   const addExerciseHandler = () => {
-    setIsModal(true);
+    dispatch(setIsModal(true));
   };
 
-  const onAddNewExercise = (newExercise: INewExercise) => {
+  //TODO: перенести запросы на сервер на ртк
+  const onAddNewExercise = async (newExercise: INewExercise) => {
     const newExercisesList = [...exercises, newExercise];
     setExercises(newExercisesList);
     setIsModal(false);
+    let day: string = '';
+    pathId === 0
+      ? (day = 'Monday')
+      : pathId === 1
+      ? (day = 'Tuesday')
+      : pathId === 2
+      ? (day = 'Wednesday')
+      : pathId === 3
+      ? (day = 'Thursday')
+      : pathId === 4
+      ? (day = 'Friday')
+      : pathId === 5
+      ? (day = 'Saturday')
+      : pathId === 6
+      ? (day = 'Sunday')
+      : (day = '');
+    await axios.put<IExercise>(`http://localhost:3001/trainings/${pathId}`, {
+      id: pathId,
+      day: day,
+      exercises: newExercisesList,
+    });
   };
 
-  const changeRepsHandler = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    i: number
-  ) => {
-    const exerciseIndex = exercises.findIndex(
-      (exercise) => exercise.id === i + 1
+  const fetchTraining = async (idDay: string) => {
+    const response = await axios.get<ITrainingDay>(
+      `http://localhost:3001/trainings/${idDay}`
     );
-    const newExercises = [...exercises];
-    newExercises[exerciseIndex] = {
-      ...newExercises[exerciseIndex],
-      reps: +e.target.value,
-    };
-    setExercises(newExercises);
+    setExercises(response.data.exercises);
   };
 
-  const changeSetsHandler = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    i: number
-  ) => {
-    const exerciseIndex = exercises.findIndex(
-      (exercise) => exercise.id === i + 1
-    );
-    const newExercises = [...exercises];
-    newExercises[exerciseIndex] = {
-      ...newExercises[exerciseIndex],
-      sets: +e.target.value,
-    };
-    setExercises(newExercises);
-  };
+  useEffect(() => {
+    const pathName = window.location.pathname;
+    const lastSymbol = pathName.length - 1;
+    const idDay = pathName[lastSymbol];
+    fetchTraining(idDay);
+  }, []);
 
-  const deleteHandler = (i: number) => {
-    const newExercises = exercises.filter((exercise) => exercise.id !== i + 1);
-    setExercises(newExercises);
-  };
+  useEffect(() => {
+    setExercises(exerciseThisDay);
+  }, []);
 
   return (
     <div className={classes.training}>
-      <h2 className={classes.trainingTitle}>Chest day</h2>
+      <Link to={'/schedule'} className={classes.backBtn}>
+        <img src={BackBtn} alt='Back button' />
+      </Link>
+      <h2 className={classes.trainingTitle}>{day}</h2>
       <div className={classes.tableWrapper}>
-        <table className={classes.table}>
-          <tbody>
-            {exercises.length > 0 ? (
-              exercises.map((exercise, i) => (
-                <tr
-                  key={exercise.exercise}
-                  className={clsx(i >= 6 && 'overflow')}
-                >
-                  <td className={classes.thExercise}>{exercise.exercise}</td>
-                  <td className={classes.thReps}>
-                    {' '}
-                    <input
-                      type='number'
-                      style={{ background: 'transparent' }}
-                      value={exercise.reps}
-                      onChange={(e) => changeRepsHandler(e, i)}
-                    />{' '}
-                    reps
-                  </td>
-                  <td className={classes.thSets}>
-                    {' '}
-                    <input
-                      type='number'
-                      style={{ background: 'transparent' }}
-                      value={exercise.sets}
-                      onChange={(e) => changeSetsHandler(e, i)}
-                    />{' '}
-                    sets
-                  </td>
-                  <td>
-                    <button
-                      className={classes.deleteBtn}
-                      onClick={() => deleteHandler(i)}
-                    >
-                      <AiOutlineDelete />
-                    </button>
-                  </td>
-                </tr>
-              ))
-            ) : (
-              <tr style={{ display: 'flex', justifyContent: 'center' }}>
-                <td>
-                  <h2>There is no exercises</h2>
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+        <TrainingDayTable exercises={exercises} setExercises={setExercises} />
       </div>
       {isModal ? (
         <Modal>
@@ -120,7 +112,6 @@ const TrainingDay: React.FC = () => {
             exercises={exercises}
             setExercises={setExercises}
             onAddNewExercise={onAddNewExercise}
-            setIsModal={setIsModal}
           />
         </Modal>
       ) : (

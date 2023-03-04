@@ -1,15 +1,24 @@
 .scheduleDays {
   @apply flex items-center justify-between gap-x-0 gap-y-20 flex-wrap text-white;
+  @media (max-width: 1620px) {
+    @apply gap-x-5 justify-center gap-y-10;
+  }
 }
 .day {
-  @apply basis-[425px] bg-blue-400 p-5 rounded-[30px] min-h-[210px] text-center relative;
+  @apply basis-[425px] bg-blue-600 p-5 rounded-[30px] min-h-[210px] text-center relative;
+  @media (max-width: 1030px) {
+    @apply basis-[300px] p-3 min-h-[150px];
+  }
 }
-// .dayLink{
-//   @apply absolute top-0 bottom-0 left-0 right-0;
-// }
 .dayTitle {
-  @apply text-[36px] font-bold mb-[33px] mt-5;
+  @apply text-[36px] font-bold mb-[33px] mt-0 py-3 rounded-3xl bg-violet-800 hover:text-violet-200 transition-colors;
+  @media (max-width: 1030px) {
+    @apply text-2xl mb-6 w-[250px] mx-auto py-2;
+  }
 }
-.dayMuscleGroup{
-  @apply text-[30px] bg-transparent text-center focus:outline-none focus:border-b-2 border-solid border-white
+.dayMuscleGroup {
+  @apply text-[30px] bg-transparent text-center focus:outline-none focus:border-b-2 border-solid border-white hover:text-gray-300 transition-colors;
+  @media (max-width: 1030px) {
+    @apply text-xl;
+  }
 }

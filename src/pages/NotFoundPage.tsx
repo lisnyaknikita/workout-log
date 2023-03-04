@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-type Props = {}
+type Props = {};
 
 const NotFoundPage = (props: Props) => {
   return (
-    <div>NotFoundPage</div>
-  )
-}
+    <h1 style={{ color: 'white', textAlign: 'center', fontSize: 70 }}>404</h1>
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;

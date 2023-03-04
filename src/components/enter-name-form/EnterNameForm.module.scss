@@ -1,0 +1,9 @@
+.title {
+  @apply text-white text-center text-2xl mb-2;
+}
+.inputName {
+  @apply block w-96 py-2 px-4 bg-transparent border-b-2 border-solid border-white/60 mx-auto text-white focus:outline-none text-lg text-center;
+}
+.button {
+  @apply block w-32 mx-auto px-4 py-2 text-lg text-white bg-white/10 rounded-3xl mt-2 hover:bg-white/20 transition-colors;
+}

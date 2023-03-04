@@ -1,12 +1,23 @@
 .sideBar {
-  @apply basis-[120px] bg-slate-700 flex flex-col items-center justify-start;
+  @apply bg-blue-900 flex flex-col items-center justify-start;
 }
-.sideBarBtn {
-  @apply px-[35px] py-[28px] flex items-center justify-center;
-  svg {
-    @apply w-[45px] h-[45px];
-    path {
-      stroke: #fff;
-    }
+.homeBtn {
+  @apply px-[25px] py-[28px] flex items-center justify-center hover:bg-fuchsia-700 transition-colors;
+  img {
+    @apply w-[55px] h-[55px];
+  }
+}
+:global {
+  .active {
+    @apply bg-fuchsia-800;
+  }
+}
+.scheduleBtn {
+  @apply px-[25px] py-[28px] flex items-center justify-center hover:bg-fuchsia-700 transition-colors;
+  img {
+    @apply w-[55px] h-[55px];
+  }
+  .active {
+    @apply bg-fuchsia-800;
   }
 }
