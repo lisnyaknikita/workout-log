@@ -1,12 +1,8 @@
-import React, { ChangeEvent, useState } from 'react';
+import React from 'react';
 
 import classes from './InputName.module.scss';
 
-type Props = {};
-
-const InputName = (props: Props) => {
-  const [name, setName] = useState('Your name');
-
+const InputName: React.FC = () => {
   return (
     <div className={classes.greeting}>
       <h1>Hello, </h1>

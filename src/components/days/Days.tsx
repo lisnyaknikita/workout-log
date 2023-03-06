@@ -20,9 +20,7 @@ import {
   setIsScheduleIconActive,
 } from '../../store/slices/IsActiveSlice';
 
-type Props = {};
-
-const Days = (props: Props) => {
+const Days: React.FC = () => {
   const dispatch = useDispatch();
 
   if (window.location.pathname.includes('schedule')) {

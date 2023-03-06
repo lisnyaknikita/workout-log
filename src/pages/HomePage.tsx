@@ -9,9 +9,7 @@ import { setIsModal } from '../store/slices/ModalSlice';
 import { RootState } from '../store/store';
 import EnterNameForm from '../components/enter-name-form/EnterNameForm';
 
-type Props = {};
-
-const HomePage = (props: Props) => {
+const HomePage: React.FC = () => {
   const dispatch = useDispatch();
 
   const [name, setName] = useState('');

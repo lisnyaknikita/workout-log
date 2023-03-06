@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
 import { IExercise } from '../../components/training-day/TrainingDay.interfaces';
 
 export interface ITrainingState {

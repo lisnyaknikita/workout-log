@@ -4,7 +4,6 @@
   }
   @apply h-[480px];
   tr {
-    //last:border-b-0
     @apply border-b-2 border-solid border-blue-900 h-20 w-[1600px] flex text-left px-5 leading-[3.5];
     @media (max-width: 1830px) {
       @apply w-[1200px];

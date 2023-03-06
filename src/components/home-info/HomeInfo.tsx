@@ -10,9 +10,7 @@ import {
 
 import classes from './HomeInfo.module.scss';
 
-type Props = {};
-
-const HomeInfo = (props: Props) => {
+const HomeInfo: React.FC = () => {
   const dispatch = useDispatch();
 
   const isActiveHandler = () => {

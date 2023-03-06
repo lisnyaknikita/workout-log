@@ -1,10 +1,6 @@
-import React from 'react';
-
 import Days from '../components/days/Days';
 
-type Props = {};
-
-const SchedulePage = (props: Props) => {
+const SchedulePage: React.FC = () => {
   return <Days />;
 };
 

@@ -51,7 +51,6 @@ const TrainingDay: React.FC = () => {
     dispatch(setIsModal(true));
   };
 
-  //TODO: перенести запросы на сервер на ртк
   const onAddNewExercise = async (newExercise: INewExercise) => {
     const newExercisesList = [...exercises, newExercise];
     setExercises(newExercisesList);

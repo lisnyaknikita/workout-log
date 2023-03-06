@@ -1,9 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 import { GrFormClose } from 'react-icons/gr';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setIsModal } from '../../store/slices/ModalSlice';
-import { RootState } from '../../store/store';
 
 import { IAddNewExercise } from './AddNewExercise.interface';
 

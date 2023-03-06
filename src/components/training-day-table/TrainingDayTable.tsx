@@ -27,7 +27,6 @@ const TrainingDayTable: React.FC<ITrainingDayTableProps> = ({
   setExercises,
 }) => {
   const pathId = useGetPathId();
-  //TODO: перенести запросы на сервер на ртк
   const changeRepsHandler = async (
     e: React.ChangeEvent<HTMLInputElement>,
     i: number,

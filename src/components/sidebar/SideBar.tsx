@@ -14,7 +14,7 @@ import {
 
 import classes from './SideBar.module.scss';
 
-const SideBar = () => {
+const SideBar: React.FC = () => {
   const dispatch = useDispatch();
 
   const { isHomeIconActive, isScheduleIconActive } = useSelector(
