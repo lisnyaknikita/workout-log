@@ -38,7 +38,7 @@ const AddNewExercise: React.FC<IAddNewExercise> = ({
       <div className={classes.inputs}>
         <input
           type='text'
-          placeholder='Enter the exercise'
+          placeholder='Enter the exercise...'
           className={classes.inputExercise}
           value={exerciseName}
           onChange={(e) => setExerciseName(e.target.value)}

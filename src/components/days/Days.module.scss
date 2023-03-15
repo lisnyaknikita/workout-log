@@ -1,24 +1,76 @@
 .scheduleDays {
-  @apply flex items-center justify-between gap-x-0 gap-y-20 flex-wrap text-white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  color: #fff;
   @media (max-width: 1620px) {
-    @apply gap-x-5 justify-center gap-y-10;
+    column-gap: 1.25rem;
+    justify-content: center;
+    row-gap: 2.5rem;
   }
 }
 .day {
-  @apply basis-[425px] bg-blue-600 p-5 rounded-[30px] min-h-[210px] text-center relative;
+  flex-basis: 425px;
+  background-color: #1d4ed8;
+  padding: 1.25rem;
+  border-radius: 30px;
+  min-height: 210px;
+  text-align: center;
+  position: relative;
   @media (max-width: 1030px) {
-    @apply basis-[300px] p-3 min-h-[150px];
+    flex-basis: 300px;
+    padding: 0.75rem;
+    min-height: 150px;
   }
 }
 .dayTitle {
-  @apply text-[36px] font-bold mb-[33px] mt-0 py-3 rounded-3xl bg-violet-800 hover:text-violet-200 transition-colors;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 53px;
+  margin-top: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 1.5rem;
+  background-color: #4c1d95;
+  color: #fff;
+  &:hover {
+    color: #c4b5fd;
+  }
+  transition: color 0.2s ease-in-out;
   @media (max-width: 1030px) {
-    @apply text-2xl mb-6 w-[250px] mx-auto py-2;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 }
 .dayMuscleGroup {
-  @apply text-[30px] bg-transparent text-center focus:outline-none focus:border-b-2 border-solid border-white hover:text-gray-300 transition-colors;
+  font-size: 2.2rem;
+  font-weight: 400;
+  background-color: transparent;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  color: #fff;
+  transition: color 0.3s;
+  font-family: 'Lexend', sans-serif;
+  &:hover {
+    color: #ccc;
+  }
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid #fff;
+  }
   @media (max-width: 1030px) {
-    @apply text-xl;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }

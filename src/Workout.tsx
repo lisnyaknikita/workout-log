@@ -10,7 +10,10 @@ import TrainingPage from './pages/TrainingPage';
 
 function Workout() {
   return (
-    <div className='workout flex w-screen h-screen'>
+    <div
+      className='workout'
+      style={{ display: 'flex', width: '100vw', height: '100vh' }}
+    >
       <SideBar />
       <div className='content'>
         <Routes>

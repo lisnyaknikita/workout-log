@@ -1,30 +1,73 @@
 .training {
-  @apply text-white flex flex-col items-center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .backBtn {
-  @apply absolute top-10 right-10;
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
   img {
-    @apply w-[65px] h-[65px] rounded-3xl bg-transparent hover:bg-white/10 transition-colors;
+    width: 4.063rem;
+    height: 4.063rem;
+    border-radius: 1.5rem;
+    background-color: transparent;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+  @media (max-width: 830px) {
+    top: 0.5rem;
+    right: 0.5rem;
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 }
 .trainingTitle {
-  @apply text-[75px] text-center mb-[135px];
+  font-size: 4.688rem;
+  text-align: center;
+  margin-bottom: 8.438rem;
 }
 .tableWrapper {
-  @apply h-[478px] w-[1620px] overflow-y-auto mb-5 bg-blue-700 rounded-[30px];
+  height: 29.875rem;
+  width: 1620px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 0.313rem;
+  background-color: #1d4ed8;
+  border-radius: 1.875rem;
   @media (max-width: 1830px) {
-    @apply w-[1200px];
+    width: 1200px;
   }
   @media (max-width: 1430px) {
-    @apply w-[900px];
+    width: 900px;
   }
   @media (max-width: 1050px) {
-    @apply w-[700px];
+    width: 700px;
   }
   @media (max-width: 830px) {
-    @apply w-[600px];
+    width: 600px;
   }
 }
 .addBtn {
-  @apply px-4 py-2 rounded-3xl bg-white/10 flex gap-3 items-center hover:bg-white/20;
+  padding: 15px 25px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Lexend', sans-serif;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: rgb(255, 255, 255);
+  }
 }

@@ -3,7 +3,14 @@
     {
       "id": 0,
       "day": "Monday",
-      "exercises": []
+      "exercises": [
+        {
+          "id": 1,
+          "exercise": "Squads",
+          "reps": 15,
+          "sets": 3
+        }
+      ]
     },
     {
       "id": 1,
@@ -13,7 +20,14 @@
     {
       "id": 2,
       "day": "Wednesday",
-      "exercises": []
+      "exercises": [
+        {
+          "id": 1,
+          "exercise": "Pull ups",
+          "reps": 9,
+          "sets": 3
+        }
+      ]
     },
     {
       "id": 3,

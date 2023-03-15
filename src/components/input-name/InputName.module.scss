@@ -1,21 +1,43 @@
 .greeting {
-  @apply flex gap-1 justify-center text-[65px] text-white mb-[100px];
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 100px;
+  font-size: 65px;
   @media (max-width: 1430px) {
-    @apply ml-[10%];
+    margin-left: 10%;
   }
   @media (max-width: 1330px) {
-    @apply ml-[15%];
+    margin-left: 15%;
   }
   @media (max-width: 1230px) {
-    @apply mb-10;
+    margin-bottom: 2.5rem;
   }
   @media (max-width: 1230px) {
-    @apply -ml-[5%] w-[600px];
+    margin-left: -5%;
+    width: 600px;
   }
 }
 .input {
-  @apply bg-transparent max-w-[350px] border-b-2 border-transparent focus:outline-none hover:text-gray-300 transition-colors;
+  background-color: transparent;
+  border: transparent;
+  max-width: 350px;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  transition: color 0.15s ease-in-out;
+  color: #fff;
+  font-size: 65px;
+  font-family: 'Lexend', sans-serif;
+  transform: translateY(-11%);
+  &:hover {
+    color: #d1d5db;
+  }
+  &:focus {
+    outline: none;
+    border-color: transparent;
+  }
   @media (max-width: 1230px) {
-    @apply max-w-[300px];
+    max-width: 300px;
   }
 }

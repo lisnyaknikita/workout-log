@@ -1,9 +1,42 @@
 .title {
-  @apply text-white text-center text-2xl mb-2;
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 10px;
+  margin-bottom: 1rem;
 }
 .inputName {
-  @apply block w-96 py-2 px-4 bg-transparent border-b-2 border-solid border-white/60 mx-auto text-white focus:outline-none text-lg text-center;
+  display: block;
+  width: 24rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  margin: 0 auto;
+  color: #fff;
+  outline: none;
+  font-size: 1.125rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Lexend', sans-serif;
 }
 .button {
-  @apply block w-32 mx-auto px-4 py-2 text-lg text-white bg-white/10 rounded-3xl mt-2 hover:bg-white/20 transition-colors;
+  font-family: 'Lexend', sans-serif;
+  display: block;
+  width: 12rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: none;
+  margin: 0 auto;
+  color: #fff;
+  outline: none;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  font-size: 1.125rem;
+  text-align: center;
+  transition: all 0.3s;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }

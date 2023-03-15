@@ -1,23 +1,52 @@
 .sideBar {
-  @apply bg-blue-900 flex flex-col items-center justify-start;
+  background-color: #1e3a8a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 .homeBtn {
-  @apply px-[25px] py-[28px] flex items-center justify-center hover:bg-fuchsia-700 transition-colors;
+  padding: 28px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease-in-out;
+
+  &:hover {
+    background-color: #9f5af0;
+  }
   img {
-    @apply w-[55px] h-[55px];
+    width: 55px;
+    height: 55px;
+  }
+  @media (max-width: 865px) {
+    padding: 15px;
   }
 }
+
 :global {
   .active {
-    @apply bg-fuchsia-800;
+    background-color: rgb(134 25 143);
   }
 }
+
 .scheduleBtn {
-  @apply px-[25px] py-[28px] flex items-center justify-center hover:bg-fuchsia-700 transition-colors;
-  img {
-    @apply w-[55px] h-[55px];
+  padding: 28px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease-in-out;
+  &.active {
+    background-color: rgb(134 25 143);
   }
-  .active {
-    @apply bg-fuchsia-800;
+  &:hover {
+    background-color: #9f5af0;
+  }
+  img {
+    width: 55px;
+    height: 55px;
+  }
+  @media (max-width: 865px) {
+    padding: 15px;
   }
 }
