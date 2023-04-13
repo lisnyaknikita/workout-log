@@ -37,11 +37,11 @@
   a {
     text-decoration: none;
     font-weight: bold;
-    color: #ae8bff;
+    color: #e9e7e7;
     font-size: 3rem;
     transition: color 0.2s ease-in-out;
     &:hover {
-      color: #9333ea;
+      color: #ffffff;
     }
   }
   @media (max-width: 1370px) {
@@ -59,7 +59,7 @@
 }
 .homeInfoBtn {
   padding: 20px;
-  background-color: #7f3cd6;
+  background-color: #6e01b6;
   border-radius: 1rem;
   font-size: 1.5rem;
   transition: background-color 0.2s ease-in-out;

@@ -35,6 +35,10 @@
   border-radius: 1.5rem;
   background-color: #4c1d95;
   color: #fff;
+  text-decoration: none;
+  &:active {
+    text-decoration: none;
+  }
   &:hover {
     color: #c4b5fd;
   }
@@ -59,9 +63,12 @@
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: transparent;
-  color: #fff;
+  color: #ffffff;
   transition: color 0.3s;
   font-family: 'Lexend', sans-serif;
+  &::placeholder {
+    color: #d5d5d5;
+  }
   &:hover {
     color: #ccc;
   }
